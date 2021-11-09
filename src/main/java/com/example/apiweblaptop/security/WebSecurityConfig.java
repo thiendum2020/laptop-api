@@ -75,6 +75,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers(HttpMethod.GET,"/api/category/**").permitAll()
             .antMatchers(HttpMethod.GET,"/api/brand/**").permitAll()
                 .antMatchers(HttpMethod.POST,"/api/roles/**").permitAll()
+                .antMatchers(HttpMethod.DELETE,"/api/roles/**").permitAll()
             .anyRequest().authenticated();
 
         http.logout().logoutUrl("api/auth/logout").invalidateHttpSession(true);
